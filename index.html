@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Гагарин Ю. А. — первый человек в космосе</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon_white.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="nav-container container">
+            <a href="index.html" class="logo">ГАГАРИН Ю. А.</a>
+            
+            <div class="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Главная</a></li>
+                <li><a href="bio.html">Биография</a></li>
+                <li><a href="gallery.html">Галерея</a></li>
+                <li><a href="vostok.html">Восток-1</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="hero-content container">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <h1 class="hero-title">Юрий Гагарин — первый человек в космосе</h1>
+                </div>
+                <div class="hero-image">
+                    <div class="photo-frame">
+                        <img src="images/hero.jpg" alt="Юрий Гагарин">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="timeline-section">
+        <div class="container">
+            <h2 class="section-title">108 минут, изменившие мир</h2>
+            <p class="section-subtitle">Хронология первого полёта человека в космос - 12 апреля 1961 года</p>
+            
+            <div class="timeline">
+                <div class="timeline-node" data-event="start">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Старт</h3>
+                        <p>09:07 по московскому времени</p>
+                        <button class="event-btn" data-event="start">Событие</button>
+                    </div>
+                </div>
+                <div class="timeline-node" data-event="separation">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Отделение</h3>
+                        <p>Отделение первой ступени</p>
+                        <button class="event-btn" data-event="separation">Событие</button>
+                    </div>
+                </div>
+                <div class="timeline-node" data-event="orbit">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Выход на орбиту</h3>
+                        <p>Начало невесомости</p>
+                        <button class="event-btn" data-event="orbit">Событие</button>
+                    </div>
+                </div>
+                <div class="timeline-node" data-event="world">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Облёт Земли</h3>
+                        <p>Космический корабль "Восток-1"</p>
+                        <button class="event-btn" data-event="world">Событие</button>
+                    </div>
+                </div>
+                <div class="timeline-node" data-event="landing">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Приземление</h3>
+                        <p>10:55 мск, около Энгельса</p>
+                        <button class="event-btn" data-event="landing">Событие</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quote-section" style="background: url('images/quote-bg.jpg') center center/cover no-repeat;">
+        <div class="quote-overlay"></div>
+        <div class="container quote-wrapper">
+            <div class="quote-text">
+                <span class="quote-mark">“</span>
+                <p class="quote-line">Облетев Землю на корабле-спутнике, я увидел, как прекрасна наша планета. Люди, будем хранить и приумножать эту красоту, а не разрушать её!</p>
+                <span class="quote-mark end-mark">”</span>
+                <p class="quote-author">— Юрий Гагарин</p>
+            </div>
+            
+            <div class="quote-photo">
+                <img src="images/signature.png" alt="Юрий Гагарин">
+            </div>
+        </div>
+    </section>
+</main>
+
+<div id="eventModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <div class="modal-body">
+            <img id="modalImage" src="" alt="Событие">
+            <p id="modalText"></p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <p>©2026 В память о Юрии Гагарине<br>
+        Корнилова Анастасия & Константинова Юлиана <br> Б-ПИГМУ-25</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

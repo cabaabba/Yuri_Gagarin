@@ -1,0 +1,880 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('fonts/Montserrat-Regular.ttf') format('truetype'),
+         url('fonts/Montserrat-Italic.ttf') format('truetype'),
+         url('fonts/Montserrat-SemiBold.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #000;
+    color: #fff;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+    padding-top: 80px;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ========== НАВИГАЦИЯ ========== */
+.navbar {
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(8px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 1rem 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-decoration: none;
+    background: #fff;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    z-index: 1001;
+    position: relative;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    font-size: 1.2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.nav-menu a:hover, 
+.nav-menu a.active {
+    border-bottom: 2px solid #dbdbdb;
+    padding-bottom: 4px;
+}
+
+/* ========== БУРГЕР-МЕНЮ ========== */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    z-index: 1001;
+    position: relative;
+}
+
+.burger-menu span {
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    transition: 0.3s ease;
+    border-radius: 2px;
+}
+
+/* ========== HERO (ГЛАВНАЯ) ========== */
+.hero {
+    position: relative;
+    min-height: 500px;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    background: #000;
+    margin-top: -80px;
+}
+
+.hero-grid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.hero-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.hero-image {
+    flex: 1.2;
+    min-width: 350px;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 12px rgba(0,0,0,0.5);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.photo-frame {
+    background: #fff;
+    padding: 12px;
+    box-shadow: 0 20px 30px -10px rgba(0,0,0,0.3);
+    width: 100%;
+    border-radius: 4px;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ========== ХРОНОЛОГИЯ ========== */
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 2rem 0 0.5rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #b9c7dd;
+    margin-bottom: 3rem;
+}
+
+.timeline {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 3rem 0 5rem;
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 5%;
+    width: 90%;
+    height: 3px;
+    background: #fff;
+    z-index: 0;
+}
+
+.timeline-node {
+    flex: 1;
+    min-width: 160px;
+    max-width: 200px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(180deg, #000000 0%, #0a0a1a 100%);
+    padding: 1rem 0.5rem;
+    border-radius: 20px;
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    min-height: 230px;
+}
+
+.timeline-node:hover {
+    transform: translateY(-8px);
+    background: #00114d;
+}
+
+.timeline-dot {
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    box-shadow: 0 0 0 4px #0f172a;
+}
+
+.timeline-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.timeline-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline-content p {
+    font-size: 0.85rem;
+    color: #b9c7dd;
+    margin-bottom: 1rem;
+}
+
+.event-btn {
+    border: none;
+    color: #ffffff;
+    background: #000000;
+    padding: 0.5rem 1rem;
+    margin-top: auto;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.2s;
+    width: 100px;
+    align-self: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.event-btn:hover {
+    background: #ffffff;
+    color: #00114d;
+}
+
+/* ========== ЦИТАТА ========== */
+.quote-section {
+    position: relative;
+    padding: 4rem 0;
+    margin-top: 2rem;
+}
+
+.quote-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+}
+
+.quote-wrapper {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.quote-text {
+    backdrop-filter: blur(3px);
+    padding: 2rem;
+    border-radius: 30px;
+    font-size: 1.5rem;
+    font-style: italic;
+    text-align: justify;
+}
+
+.quote-mark {
+    font-size: 4rem;
+    line-height: 0.8;
+    opacity: 0.8;
+}
+
+.end-mark {
+    text-align: right;
+    display: block;
+}
+
+.quote-line {
+    margin: 0.5rem 0;
+}
+
+.quote-author {
+    text-align: right;
+    font-weight: 500;
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+.quote-photo {
+    position: relative;
+    z-index: 2;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.quote-photo img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+}
+
+/* ========== МОДАЛЬНОЕ ОКНО ========== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(6px);
+}
+
+.modal-content {
+    background: #000;
+    margin: 5% auto;
+    padding: 1.5rem;
+    width: 85%;
+    max-width: 650px;
+    border-radius: 28px;
+    animation: fadeUp 0.3s;
+}
+
+.close-btn {
+    float: right;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.close-btn:hover {
+    color: #fff;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.modal-body img {
+    width: 100%;
+    border-radius: 20px;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.modal-content h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.modal-body p {
+    text-align: justify;
+    line-height: 1.6;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== БИОГРАФИЯ ========== */
+.bio-page {
+    padding: 2rem 0 4rem;
+}
+
+.bio-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.bio-header h1, .gallery-page h1 {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.bio-header p, .gallery-sub {
+    font-size: 1.2rem;
+    color: #ddd;
+}
+
+.bio-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.bio-text h2 {
+    font-size: 1.8rem;
+    margin: 1.5rem 0 0.8rem;
+}
+
+.bio-text p {
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.bio-aside img {
+    width: 100%;
+    border-radius: 24px;
+    margin-bottom: 1.5rem;
+}
+
+.bio-fact {
+    background: #000;
+    padding: 1.5rem;
+    border-radius: 28px;
+}
+
+.bio-fact h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.bio-fact ul {
+    list-style: none;
+}
+
+.bio-fact li {
+    margin: 0.7rem 0;
+    border-bottom: 1px dashed #fff;
+    padding-bottom: 0.4rem;
+}
+
+/* ========== ГАЛЕРЕЯ ========== */
+.gallery-page {
+    padding: 2rem 0 4rem;
+}
+
+.gallery-page h1 {
+    text-align: center;
+}
+
+.gallery-sub {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.8rem;
+}
+
+.gallery-item {
+    background: linear-gradient(180deg, #000000 0%, #0a0a1a 100%);
+    border-radius: 28px;
+    overflow: hidden;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.02);
+}
+
+.gallery-caption {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+    text-align: center;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-note {
+    text-align: center;
+    margin-top: 2.5rem;
+    font-size: 0.85rem;
+    color: #7e8aa8;
+}
+
+/* ========== ПОДВАЛ ========== */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid #4e4e4e;
+    margin-top: 2rem;
+}
+
+/* ========== СТРАНИЦА ВОСТОК-1 ========== */
+.vostok-page {
+    background: #000;
+}
+
+.vostok-info {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    background: #000;
+    padding: 4rem 0;
+}
+
+.vostok-info .container {
+    width: 100%;
+}
+
+.vostok-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+    background: #fff;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.vostok-description {
+    max-width: 1000px;
+    margin: 0 auto 2.5rem;
+    text-align: justify;
+}
+
+.vostok-description p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #ddd;
+}
+
+.vostok-facts h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.fact-card {
+    background: linear-gradient(180deg, #000000 0%, #0a0a1a 100%);
+    border-radius: 16px;
+    padding: 1.2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.fact-card:hover {
+    background: #00114d;
+    transform: translateY(-5px);
+}
+
+.fact-label {
+    display: block;
+    font-size: 0.85rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.fact-value {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* ========== 3D МОДЕЛИ ========== */
+.vostok-3d-section {
+    padding: 4rem 0;
+    background: #000;
+}
+
+.vostok-3d-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+.models-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.model-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 550px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 24px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.model-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.model-title {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #ddd;
+    font-weight: 500;
+}
+
+.sketchfab-3d {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+    position: relative;
+}
+
+.sketchfab-3d iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    display: block !important;
+}
+
+/* ========== АДАПТАВНОСТЬ ========== */
+@media (max-width: 768px) {
+    .burger-menu {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.98);
+        backdrop-filter: blur(15px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: 0.3s ease-in-out;
+        z-index: 1000;
+        padding: 2rem;
+    }
+    
+    .nav-menu.active {
+        right: 0;
+    }
+    
+    .burger-menu.active span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+    }
+    
+    .burger-menu.active span:nth-child(2) {
+        opacity: 0;
+        transform: scale(0);
+    }
+    
+    .burger-menu.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+    
+    body.menu-open {
+        overflow: hidden;
+    }
+    
+    .nav-menu a {
+        font-size: 1.5rem;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .bio-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .timeline {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .timeline::before {
+        display: none;
+    }
+    
+    .timeline-node {
+        min-width: 250px;
+        max-width: 280px;
+        width: 100%;
+    }
+    
+    .bio-header h1, .gallery-page h1 {
+        font-size: 2.2rem;
+    }
+    
+    .bio-header p, .gallery-sub {
+        font-size: 1rem;
+    }
+    
+    .quote-photo img {
+        max-width: 250px;
+    }
+    
+    .vostok-title {
+        font-size: 2.2rem;
+    }
+    
+    .vostok-description p {
+        font-size: 1rem;
+    }
+    
+    .vostok-facts h2 {
+        font-size: 1.6rem;
+    }
+    
+    .facts-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        max-width: 500px;
+    }
+    
+    .fact-value {
+        font-size: 1.1rem;
+    }
+    
+    .vostok-3d-title {
+        font-size: 1.6rem;
+    }
+    
+    .models-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    
+    .model-card {
+        width: 100%;
+        max-width: 100%;
+        min-width: auto;
+        padding: 1rem;
+    }
+    
+    .sketchfab-3d {
+        aspect-ratio: 4 / 3;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 92%;
+        padding: 0 5px;
+    }
+    
+    .hero-title {
+        font-size: 1.5rem;
+    }
+    
+    .hero-text, .hero-image {
+        min-width: 250px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .quote-text {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+    
+    .quote-mark {
+        font-size: 2.5rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .bio-header h1, .gallery-page h1 {
+        font-size: 1.8rem;
+    }
+    
+    .bio-header p, .gallery-sub {
+        font-size: 0.9rem;
+    }
+    
+    .quote-photo img {
+        max-width: 200px;
+    }
+    
+    .vostok-title {
+        font-size: 1.6rem;
+    }
+    
+    .facts-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+        max-width: 280px;
+    }
+    
+    .fact-card {
+        padding: 0.8rem;
+    }
+    
+    .fact-value {
+        font-size: 1rem;
+    }
+    
+    .vostok-3d-title {
+        font-size: 1.4rem;
+    }
+    
+    .model-title {
+        font-size: 1.1rem;
+    }
+    
+    .model-card {
+        padding: 0.8rem;
+    }
+    
+    .sketchfab-3d {
+        aspect-ratio: 1 / 1;
+    }
+}
+
+@media (max-width: 360px) {
+    .container {
+        width: 95%;
+        padding: 0 3px;
+    }
+    
+    .model-card {
+        padding: 0.5rem;
+    }
+}
